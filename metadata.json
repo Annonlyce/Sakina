@@ -1,0 +1,6 @@
+{
+  "name": "سكينة",
+  "description": "تطبيق للاستماع إلى القرآن الكريم بأصوات مئات القرّاء، مع التحميل للاستماع بلا إنترنت، والورد اليومي بالرسم العثماني، والأذكار اليومية، بلا حساب ولا إعلانات.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

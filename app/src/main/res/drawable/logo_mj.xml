@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- M monogram -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11,12 L34,35 L56,13 L56,37 L34,59 L23.5,48.5 L23.5,82.5 L11,95 Z" />
+    <!-- J monogram -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M89,13 L89,64 A23,23 0 1,1 43,64 L56,51 L56,64 A10.5,10.5 0 1,0 76.5,64 L76.5,25.5 Z" />
+</vector>

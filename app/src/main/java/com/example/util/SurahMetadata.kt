@@ -1,0 +1,143 @@
+package com.example.util
+
+data class SurahInfo(
+    val number: Int,
+    val name: String,
+    val verseCount: Int,
+    val isMeccan: Boolean
+) {
+    val typeLabel: String get() = if (isMeccan) "مكية" else "مدنية"
+
+    fun subtitleArabic(): String {
+        val verseWord = when {
+            verseCount in 3..10 -> "آيات"
+            else -> "آية"
+        }
+        return "${verseCount.toArabicDigits()} $verseWord · $typeLabel"
+    }
+}
+
+object SurahMetadata {
+    const val TOTAL_SURAHS = 114
+    const val TOTAL_VERSES = 6236
+
+    val all: List<SurahInfo> = listOf(
+        SurahInfo(1, "الفاتحة", 7, true),
+        SurahInfo(2, "البقرة", 286, false),
+        SurahInfo(3, "آل عمران", 200, false),
+        SurahInfo(4, "النساء", 176, false),
+        SurahInfo(5, "المائدة", 120, false),
+        SurahInfo(6, "الأنعام", 165, true),
+        SurahInfo(7, "الأعراف", 206, true),
+        SurahInfo(8, "الأنفال", 75, false),
+        SurahInfo(9, "التوبة", 129, false),
+        SurahInfo(10, "يونس", 109, true),
+        SurahInfo(11, "هود", 123, true),
+        SurahInfo(12, "يوسف", 111, true),
+        SurahInfo(13, "الرعد", 43, false),
+        SurahInfo(14, "إبراهيم", 52, true),
+        SurahInfo(15, "الحجر", 99, true),
+        SurahInfo(16, "النحل", 128, true),
+        SurahInfo(17, "الإسراء", 111, true),
+        SurahInfo(18, "الكهف", 110, true),
+        SurahInfo(19, "مريم", 98, true),
+        SurahInfo(20, "طه", 135, true),
+        SurahInfo(21, "الأنبياء", 112, true),
+        SurahInfo(22, "الحج", 78, false),
+        SurahInfo(23, "المؤمنون", 118, true),
+        SurahInfo(24, "النور", 64, false),
+        SurahInfo(25, "الفرقان", 77, true),
+        SurahInfo(26, "الشعراء", 227, true),
+        SurahInfo(27, "النمل", 93, true),
+        SurahInfo(28, "القصص", 88, true),
+        SurahInfo(29, "العنكبوت", 69, true),
+        SurahInfo(30, "الروم", 60, true),
+        SurahInfo(31, "لقمان", 34, true),
+        SurahInfo(32, "السجدة", 30, true),
+        SurahInfo(33, "الأحزاب", 73, false),
+        SurahInfo(34, "سبأ", 54, true),
+        SurahInfo(35, "فاطر", 45, true),
+        SurahInfo(36, "يس", 83, true),
+        SurahInfo(37, "الصافات", 182, true),
+        SurahInfo(38, "ص", 88, true),
+        SurahInfo(39, "الزمر", 75, true),
+        SurahInfo(40, "غافر", 85, true),
+        SurahInfo(41, "فصلت", 54, true),
+        SurahInfo(42, "الشورى", 53, true),
+        SurahInfo(43, "الزخرف", 89, true),
+        SurahInfo(44, "الدخان", 59, true),
+        SurahInfo(45, "الجاثية", 37, true),
+        SurahInfo(46, "الأحقاف", 35, true),
+        SurahInfo(47, "محمد", 38, false),
+        SurahInfo(48, "الفتح", 29, false),
+        SurahInfo(49, "الحجرات", 18, false),
+        SurahInfo(50, "ق", 45, true),
+        SurahInfo(51, "الذاريات", 60, true),
+        SurahInfo(52, "الطور", 49, true),
+        SurahInfo(53, "النجم", 62, true),
+        SurahInfo(54, "القمر", 55, true),
+        SurahInfo(55, "الرحمن", 78, false),
+        SurahInfo(56, "الواقعة", 96, true),
+        SurahInfo(57, "الحديد", 29, false),
+        SurahInfo(58, "المجادلة", 22, false),
+        SurahInfo(59, "الحشر", 24, false),
+        SurahInfo(60, "الممتحنة", 13, false),
+        SurahInfo(61, "الصف", 14, false),
+        SurahInfo(62, "الجمعة", 11, false),
+        SurahInfo(63, "المنافقون", 11, false),
+        SurahInfo(64, "التغابن", 18, false),
+        SurahInfo(65, "الطلاق", 12, false),
+        SurahInfo(66, "التحريم", 12, false),
+        SurahInfo(67, "الملك", 30, true),
+        SurahInfo(68, "القلم", 52, true),
+        SurahInfo(69, "الحاقة", 52, true),
+        SurahInfo(70, "المعارج", 44, true),
+        SurahInfo(71, "نوح", 28, true),
+        SurahInfo(72, "الجن", 28, true),
+        SurahInfo(73, "المزمل", 20, true),
+        SurahInfo(74, "المدثر", 56, true),
+        SurahInfo(75, "القيامة", 40, true),
+        SurahInfo(76, "الإنسان", 31, false),
+        SurahInfo(77, "المرسلات", 50, true),
+        SurahInfo(78, "النبأ", 40, true),
+        SurahInfo(79, "النازعات", 46, true),
+        SurahInfo(80, "عبس", 42, true),
+        SurahInfo(81, "التكوير", 29, true),
+        SurahInfo(82, "الانفطار", 19, true),
+        SurahInfo(83, "المطففين", 36, true),
+        SurahInfo(84, "الانشقاق", 25, true),
+        SurahInfo(85, "البروج", 22, true),
+        SurahInfo(86, "الطارق", 17, true),
+        SurahInfo(87, "الأعلى", 19, true),
+        SurahInfo(88, "الغاشية", 26, true),
+        SurahInfo(89, "الفجر", 30, true),
+        SurahInfo(90, "البلد", 20, true),
+        SurahInfo(91, "الشمس", 15, true),
+        SurahInfo(92, "الليل", 21, true),
+        SurahInfo(93, "الضحى", 11, true),
+        SurahInfo(94, "الشرح", 8, true),
+        SurahInfo(95, "التين", 8, true),
+        SurahInfo(96, "العلق", 19, true),
+        SurahInfo(97, "القدر", 5, true),
+        SurahInfo(98, "البينة", 8, false),
+        SurahInfo(99, "الزلزلة", 8, false),
+        SurahInfo(100, "العاديات", 11, true),
+        SurahInfo(101, "القارعة", 11, true),
+        SurahInfo(102, "التكاثر", 8, true),
+        SurahInfo(103, "العصر", 3, true),
+        SurahInfo(104, "الهمزة", 9, true),
+        SurahInfo(105, "الفيل", 5, true),
+        SurahInfo(106, "قريش", 4, true),
+        SurahInfo(107, "الماعون", 7, true),
+        SurahInfo(108, "الكوثر", 3, true),
+        SurahInfo(109, "الكافرون", 6, true),
+        SurahInfo(110, "النصر", 3, false),
+        SurahInfo(111, "المسد", 5, true),
+        SurahInfo(112, "الإخلاص", 4, true),
+        SurahInfo(113, "الفلق", 5, true),
+        SurahInfo(114, "الناس", 6, true)
+    )
+
+    fun byNumber(number: Int): SurahInfo =
+        all.getOrElse(number - 1) { all.first() }
+}

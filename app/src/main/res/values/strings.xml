@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">سكينة</string>
+    <string name="notification_channel_playback_name">تشغيل التلاوة</string>
+    <string name="notification_channel_playback_desc">عناصر التحكم في تشغيل القرآن الكريم</string>
+    <string name="notification_channel_downloads_name">تحميل السور</string>
+    <string name="notification_channel_downloads_desc">إشعارات تقدّم تحميل السور للاستماع بدون إنترنت</string>
+</resources>
