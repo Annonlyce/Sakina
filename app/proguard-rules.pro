@@ -1,21 +1,18 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# Keep Moshi generated adapters and Retrofit service interfaces
+-keep class com.example.data.network.** { *; }
+-keep class com.example.data.repository.*Json* { *; }
+-keepclassmembers class * {
+    @com.squareup.moshi.Json *;
+}
+-keepattributes Signature,InnerClasses,EnclosingMethod,RuntimeVisibleAnnotations,RuntimeVisibleParameterAnnotations
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Keep Room database and entities
+-keep class * extends androidx.room.RoomDatabase
+-keep class com.example.data.local.db.** { *; }
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Keep Media3 PlaybackService and Worker classes referenced from AndroidManifest / WorkManager
+-keep class com.example.player.SakinaPlaybackService { *; }
+-keep class com.example.downloads.SurahDownloadWorker { *; }
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Preserve source line numbers for crash diagnostics
+-keepattributes SourceFile,LineNumberTable
